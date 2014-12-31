@@ -1,0 +1,187 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+
+% Title Page
+\title{Digital Mars: 2015 Google Summer of Code Proposal}
+\author{Craig Dillabaugh}
+
+
+\begin{document}
+\maketitle
+
+\section{Organization}
+
+DigitalMars leads the D Programming Language community.   The D programming
+langauge was initially developed by Walter Bright, as a 'better C++', but
+has evolved far beyond its original goal.
+Recent improvements to 
+the D development process have accelarated development of the language. The 
+current focus of the D community is to improve the tool support around the 
+language to make the language more attractive to those currently outside the 
+community.  
+
+Many of the core developers for the D programming language make thier 
+livelihoods developing with other languages.  D is not, yet, used extensively
+in industry - though it is slowly gaining traction, and has been used very 
+successfully in some instances.
+D developers generally use it because it makes programming fun again for them.  
+It is 
+powerful, efficient, and doesn't force any particular paradigm on developers,
+but rather provides tools that allow them to reason about problems in the way 
+they see fit. 
+
+D developers, and users, feel that D is already an excellent language, but 
+that in order
+for it to gain wider acceptance it needs better tools, and some additional 
+work on its standard library (Phobos).  
+
+
+\section{Reason For Applying}
+
+In addition to the improvements to the D toolchain and libraries, we 
+hope to attract students who will be long term contributors to the D ecosystem.
+Many D contributors and users feel that D is very close to gaining more
+widespread acceptance, however there are still a few rough edges that
+need to be ironed out. 
+The Google Summer of Code is attractive to our community because the D 
+language is truly a grassroots project with very limited backing from 
+large commercial entities.  
+Thus, attracting bright, and motivated, individuals to the community is
+is what is needed to move the langauge ecosystem forward.
+The Google Summer of Code is an excellent way to attract such people.
+
+
+
+\section{Past Participation}
+
+DigitalMars has submitted proposals to the Google Summer of Code every
+summer since 2011 when we first participated. In each of 2011 and 2012
+we had 3 student projects accepted, but did not have any successful 
+applications in 2013 or 2014.
+
+\section{Past Results}
+
+In 2011 we had three proposals accepted:
+
+\begin{enumerate}
+\item \emph{Linear Algebra Library based on SciD} by Cristi Cobzarenco 
+ mentored by David Simcha.
+\item \emph{An Apache Thrift Implementation for D} by David Nadlinger mentored 
+by Nitay Joffe.
+\item \emph{Enhance Regular Expressions} by Dmitry Olshansky mentored by
+Fawzi Mohamed.
+\end{enumerate}
+
+We consider all three projects to have been successes. Cristi rewrote most of the 
+original SciD code (by Lars Tandle Kyllingstad).  David completed his project 
+and Thrift officially supported D as of March 2012.  Dmitry completed his project 
+and his work  now forms one of the modules \texttt{std.regex} in Phobos, the D 
+standard library. Both David and Dmitry are still very active in the D community.
+
+In 2012 we also had three projects accepted:
+
+\begin{enumerate}
+  \item \emph{Mono-D} by Alex Bothe, mentored by LightBender.
+  \item \emph{Removing the global gc lock from common allocations in D} by 
+  Antti-Ville Tuuainen, mentored by David Simcha.
+  \item \emph{Extended unicode support} by Dimitry Olshansky mentored by
+  Andrei Alexandrescu.
+\end{enumerate}
+
+We consider that all of these projects were also successful.  Dmitry's extended
+unicode support has been accepted into the Phobos standard library as \texttt{std.uni}.
+Alex's Mono-D is a popular idea in the D community, is actively developed, and 
+Alex is still involved (see https://github.com/aBothe/Mono-D). Antti-Ville's project
+turned out to be the most challenging.  The project was redirected to implementing
+precise scanning for the GC using RTInfo.  That feature was brand new at the time, so
+Antti-Ville and David had to fight with a lot of bugs in DMD (the standard D compiler).
+A new implementation of precise garbage collection is being developed by Rainer Schuetze
+based in large part on Antti-Ville's work (see 
+https://github.com/Tuna-Fish/druntime/tree/gc\_poolwise\_bitmap ).
+
+\section{Placeholder}
+
+If your organization has not previously participated in Google Summer of Code, 
+have you applied in the past? If so, for what year(s)?
+
+\section{OSI Licenses}
+
+What Open Source Initiative approved license(s) does your project use?
+
+
+\section{Project Ideas List}
+
+\texttt{http://wiki.dlang.org/GSOC_2015_Ideas}
+
+\section{Main Development Mailing List}
+What is the main development mailing list for your organization?
+
+\section{IRC channel}
+What is the main IRC channel for your organization?
+
+\section{Backup Organization Administrator}
+Who will be your backup organization administrator?
+
+\section{Mentor Selection}
+
+What criteria did you use to select the mentors? 
+Please be as specific as possible.
+
+A call was put out on the D community forums for possible mentors.
+We asked that the mentors have concrete project ideas that
+they were capable of managing development on.  Thus our mentors
+have been self selected, but each one has a lengthy involvement 
+in the D community. The various proposals were discussed
+in the D community forums. 
+
+\section{Disappearing Students}
+What is your plan for dealing with disappearing students? 
+Please be as specific as possible.
+
+911
+
+\section{Disappearing Mentors}
+
+We plan to identify backup mentor's for all accepted projects, 
+and keep in close contact with our mentor's throughout the
+summer.  
+
+\section{Community Interaction}
+What steps will you take to encourage students to interact 
+with your project's community before, during and after 
+the program?
+
+Some steps we plan to take to help students interact with
+the D community:
+
+\begin{enumerate}
+\item Have students post regular (monthly) progress reports
+on the D forum, to keep the community up to date, but also
+to attract feedback and solicit ideas.
+\item 
+\end{enumerate}
+
+\section{Googlers}
+Are you a new organization who has a Googler or other organization
+to vouch for you? If so, please list their name(s) here.
+
+Not applicable.
+
+\section{Who can we vouch for}
+Are you an established or larger organization who would like to 
+vouch for a new organization applying this year? If so, please 
+list their name(s) here.
+
+Vibe D.   Anyone?
+
+\section{Stick to It}
+What will you do to encourage that your accepted students stick 
+with the project after Google Summer of Code concludes?
+
+We have tried to present interesting projects that will be fun
+to work on.
+
+
+
+
+\end{document} 
