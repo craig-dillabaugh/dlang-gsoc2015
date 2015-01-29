@@ -1,16 +1,104 @@
-\documentclass[a4paper,12pt]{article}
-\usepackage[utf8]{inputenc}
+%\documentclass[a4paper,12pt]{article}
+%\usepackage[utf8]{inputenc}
+
+%%% LaTeX Template: Two column article
+%%%
+%%% Source: http://www.howtotex.com/
+%%% Feel free to distribute this template, but please keep to referal to http://www.howtotex.com/ here.
+%%% Date: February 2011
+
+%%% Preamble
+\documentclass[	DIV=calc,%
+							paper=a4,%
+							fontsize=11pt,%
+							twocolumn]{scrartcl}	 					% KOMA-article class
+
+\usepackage{lipsum}													% Package to create dummy text
+
+\usepackage[english]{babel}										% English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
+\usepackage{amsmath,amsfonts,amsthm}					% Math packages
+\usepackage[pdftex]{graphicx}									% Enable pdflatex
+\usepackage[svgnames]{xcolor}									% Enabling colors by their 'svgnames'
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}	% Custom captions under/above floats
+\usepackage{epstopdf}												% Converts .eps to .pdf
+\usepackage{subfig}													% Subfigures
+\usepackage{booktabs}												% Nicer tables
+\usepackage{fix-cm}													% Custom fontsizes
+
+
+
+%%% Custom sectioning (sectsty package)
+\usepackage{sectsty}													% Custom sectioning (see below)
+\allsectionsfont{%															% Change font of al section commands
+	\usefont{OT1}{phv}{b}{n}%										% bch-b-n: CharterBT-Bold font
+	}
+
+\sectionfont{%																% Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%										% bch-b-n: CharterBT-Bold font
+	}
+
+
+
+%%% Headers and footers
+\usepackage{fancyhdr}												% Needed to define custom headers/footers
+	\pagestyle{fancy}														% Enabling the custom headers/footers
+\usepackage{lastpage}	
+
+% Header (empty)
+\lhead{}
+\chead{}
+\rhead{}
+% Footer (you may change this to your own needs)
+\lfoot{\footnotesize \texttt{www.dlang.org} $\cdot$ Layout based on template from \texttt{HowToTeX.com}}
+\cfoot{}
+\rfoot{\footnotesize page \thepage\ of \pageref{LastPage}}	% "Page 1 of 2"
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+%%% Creating an initial of the very first character of the content
+\usepackage{lettrine}
+\newcommand{\initial}[1]{%
+     \lettrine[lines=3,lhang=0.3,nindent=0em]{
+     				\color{DarkGoldenrod}
+     				{\textsf{#1}}}{}}
+
+
+
+%%% Title, author and date metadata
+\usepackage{titling}	% For custom titles
+
+\newcommand{\HorRule}{\color{DarkGoldenrod}%% Creating a horizontal rule
+\rule{\linewidth}{1pt}%
+}
+
+\pretitle{\vspace{-30pt} \begin{flushleft} \HorRule 
+				\fontsize{50}{50} \usefont{OT1}{phv}{b}{n} \color{DarkRed} \selectfont 
+				}
+\title{Digital Mars: 2015 Google Summer of Code Proposal}					% Title of your article goes here
+\posttitle{\par\end{flushleft}\vskip 0.5em}
+
+\preauthor{\begin{flushleft}
+					\large \lineskip 0.5em \usefont{OT1}{phv}{b}{sl} \color{DarkRed}}
+\author{Craig Dillabaugh }											% Author name goes here
+\postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black} 
+					on behalf of Digital Mars 								% Institution of author
+					\par\end{flushleft}\HorRule}
+
+\date{}		
 
 % Title Page
-\title{Digital Mars: 2015 Google Summer of Code Proposal}
-\author{Craig Dillabaugh}
+%\title{Digital Mars: 2015 Google Summer of Code Proposal}
+%\author{Craig Dillabaugh}
 
 
 \begin{document}
 \maketitle
 
 This document constitutes the organization program proposal for the
-2015 Google Summer of Code for Digital Mars, which is the orgnaization
+2015 Google Summer of Code for Digital Mars, which is the organization
 leading development of the D Programming Language. The sections below
 generally follow the outline presented in the \emph{What should a mentoring
 organization proposal look like} section of the GSOC FAQ, though some 
@@ -20,36 +108,30 @@ been omitted.
 \section{Organization}
 
 DigitalMars leads the D Programming Language community.   The D programming
-langauge was initially developed by Walter Bright, as a 'better C++', but
+language was initially developed by Walter Bright, as a 'better C++', but
 has evolved far beyond its original goal.
 Recent improvements to 
-the D development process have accelarated development of the language and
+the D development process have accelerated development of the language and
 its standard library, Phobos.
 The 
 current focus of the D community is to improve the tool support around the 
-language, to patch a few remaining holes in the standard library, and to m
-ake the language more attractive to those currently outside the 
-community.  
+language, to patch a few remaining holes in the standard library, and to make 
+the language more attractive to those currently outside the community.  
 
-Many of the core developers for the D programming language make thier 
+Many of the core developers for the D programming language make their 
 livelihoods developing with other languages.  D is not, yet, used extensively
 in industry - though it is slowly gaining traction, and has been used very 
 successfully in some instances.
-D developers generally use it because it makes programming fun again for them.  
+D developers generally use it because it makes programming fun for them.  
 It is 
 powerful, efficient, and doesn't force any particular paradigm on developers,
 but rather provides tools that allow them to reason about problems in the way 
-they see fit. 
-
-D developers, and users, feel that D is already an excellent language, but 
-that in order
-for it to gain wider acceptance it needs better tools, and some additional 
-work on its standard library (Phobos).  
+they see fit.
 
 
 \section{Reason For Applying}
 
-In addition to the improvements to the D toolchain and libraries, we 
+In addition to the improvements to the D tool chain and libraries, we 
 hope to attract students who will be long term contributors to the D ecosystem.
 Many D contributors and users feel that D is very close to gaining more
 widespread acceptance, however there are still a few rough edges that
@@ -58,7 +140,7 @@ The Google Summer of Code is attractive to our community because the D
 language is truly a grassroots project with very limited backing from 
 large commercial entities.  
 Thus, attracting bright, and motivated, individuals to the community is
-is what is needed to move the langauge ecosystem forward.
+is what is needed to move the language ecosystem forward.
 The Google Summer of Code is an excellent way to attract such people.
 
 
@@ -149,7 +231,7 @@ the D Forum:
 \item \texttt{http://forum.dlang.org}
 \end{itemize}
 
-TODO: Neet and email address.
+TODO: Need an email address.
 
 \section{IRC channel}
 D's main IRC channel is:  \#d on irc.freenode.net
@@ -172,7 +254,7 @@ in the D community. The various proposals were discussed
 in the D community forums. 
 
 \section{Disappearing Students}
-In order to deal with students who dissappear or who fail to
+In order to deal with students who disappear or who fail to
 maintain a suitable level of progress in their projects we plan
 to do following:
 
@@ -190,25 +272,21 @@ to take action to correct the situation.
 We plan to identify backup mentor's for all accepted projects, 
 and keep in close contact with our mentor's throughout the
 summer.  Not only will students be expected to report to the mentors,
-but the adminstrator will follow up regularly with the mentors, and
+but the administrator will follow up regularly with the mentors, and
 keep communication channels open with the students.
 
 We have a number of volunteer backups for the mentors, in case
-some mentor becomes unable to fulfil their duties for whatever
+some mentor becomes unable to fulfill their duties for whatever
 reason.  Our backup mentor's include:
 
-\begin{center}
-   \begin{tabular}{ | l | l | }
-     \hline
-     \textbf{Mentor} & \textbf{Qualifications} \\ \hline
-     Adam D. Ruppe & Adam has many years of experience in D development\\
-     & , and recently released a book on D programming, \\
-     & 'D Cookbook'.\\ \hline
-     Dmitry Olashansky & Check spelling. Twice a successful participant \\
-     & in the Goolge Summer of Code as a student, Dmitry continues to be \\
-     & very active in the D community. \\
-   \end{tabular}
-\end{center}
+\begin{enumerate}
+     \item \textbf{Adam D. Ruppe}  Adam has many years of experience in
+     D development and recently released a book on D programming, \\
+     'D Cookbook'.
+     \item \textbf{Dmitry Olshansky}  Twice a successful participant
+     in the Google Summer of Code as a student, Dmitry continues to be 
+     very active in the D community. 
+\end{enumerate}
 
 \section{Community Interaction}
 \emph{What steps will you take to encourage students to interact 
@@ -227,7 +305,7 @@ Valley State University in Orem, Utah from May 27\textsuperscript{th}
 to May 29\textsuperscript{th}, 2015. This is conveniently right at 
 the end of the student bonding period, and we will encourage any
 GSOC students to attend this meeting where it is financially 
-feasbile. See http://dconf.org/2015/index.html) for information on 
+feasible. See http://dconf.org/2015/index.html) for information on 
 the 2015 edition of DConf.
 \end{enumerate}
 
