@@ -8,41 +8,38 @@
 %%% Date: February 2011
 
 %%% Preamble
-\documentclass[	DIV=calc,%
-							paper=a4,%
-							fontsize=11pt,%
-							twocolumn]{scrartcl}	 					% KOMA-article class
+\documentclass[	DIV=calc,paper=a4,fontsize=11pt,twocolumn]{scrartcl}	% KOMA-article class
 
-\usepackage{lipsum}													% Package to create dummy text
+\usepackage{lipsum}							% Package to create dummy text
 
-\usepackage[english]{babel}										% English language/hyphenation
-\usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
+\usepackage[english]{babel}						% English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}			% Better typography
 \usepackage{amsmath,amsfonts,amsthm}					% Math packages
-\usepackage[pdftex]{graphicx}									% Enable pdflatex
-\usepackage[svgnames]{xcolor}									% Enabling colors by their 'svgnames'
+\usepackage[pdftex]{graphicx}						% Enable pdflatex
+\usepackage[svgnames]{xcolor}						% Enabling colors by their 'svgnames'
 \usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}	% Custom captions under/above floats
-\usepackage{epstopdf}												% Converts .eps to .pdf
-\usepackage{subfig}													% Subfigures
-\usepackage{booktabs}												% Nicer tables
-\usepackage{fix-cm}													% Custom fontsizes
+\usepackage{epstopdf}							% Converts .eps to .pdf
+\usepackage{subfig}							% Subfigures
+\usepackage{booktabs}							% Nicer tables
+\usepackage{fix-cm}							% Custom fontsizes
 \usepackage{hyperref}
 
 
 %%% Custom sectioning (sectsty package)
-\usepackage{sectsty}													% Custom sectioning (see below)
-\allsectionsfont{%															% Change font of al section commands
-	\usefont{OT1}{phv}{b}{n}%										% bch-b-n: CharterBT-Bold font
+\usepackage{sectsty}							% Custom sectioning (see below)
+\allsectionsfont{%							% Change font of al section commands
+	\usefont{OT1}{phv}{b}{n}%					% bch-b-n: CharterBT-Bold font
 	}
 
-\sectionfont{%																% Change font of \section command
-	\usefont{OT1}{phv}{b}{n}%										% bch-b-n: CharterBT-Bold font
+\sectionfont{%								% Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%					% bch-b-n: CharterBT-Bold font
 	}
 
 
 
 %%% Headers and footers
-\usepackage{fancyhdr}												% Needed to define custom headers/footers
-	\pagestyle{fancy}														% Enabling the custom headers/footers
+\usepackage{fancyhdr}							% Needed to define custom headers/footers
+	\pagestyle{fancy}						% Enabling the custom headers/footers
 \usepackage{lastpage}	
 
 % Header (empty)
@@ -207,7 +204,7 @@ for which we have project ideas listed on our projects page.
      GDC & GPL \\
      DDT & Eclipse Public License/Apache License  \\
      DOtherSide & LGPL v3 \\
-     Csmed & MIT \\ \hline
+     Cmsed & MIT \\ \hline
    \end{tabular}
 \end{center}
 
